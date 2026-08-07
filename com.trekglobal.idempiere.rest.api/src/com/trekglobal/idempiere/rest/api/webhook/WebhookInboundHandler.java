@@ -209,6 +209,8 @@ public class WebhookInboundHandler {
 					.build();
 		}
 
+		Env.setContext(ctx, Env.AD_USER_ID, userId);
+
 		ProcessInfo pi = new ProcessInfo("Webhook: " + endpointKey, inbound.getAD_Process_ID());
 		pi.setAD_Client_ID(inbound.getAD_Client_ID());
 		pi.setAD_User_ID(userId);
